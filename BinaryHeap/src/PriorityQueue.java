@@ -3,9 +3,10 @@ import java.util.ArrayList;
 
 public class PriorityQueue<E> 
 {
+	
 	public PriorityQueue(){}
 	
-	public void add(ArrayList<Integer> randoms)
+	public void add()
 	{
 		Array heap = new Array();
 		

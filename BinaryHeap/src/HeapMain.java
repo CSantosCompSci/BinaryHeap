@@ -1,19 +1,40 @@
 import java.util.ArrayList;
 
-public class HeapMain {
+public class HeapMain 
+{
+	static int size = 0;
 	public static void main(String [] args)
 	{
 		System.out.println("This is a Binary Heap Program");
 		
 		//Create arrayList to store 20 random integers that will be sorted in the heap
 		
-		ArrayList<Integer> randoms = new ArrayList<Integer>();
+		int [] heap = new int[20];
+	
 		for(int i = 0; i < 20;i++)
 		{
-			randoms.add((int)Math.random()* 1000);
+			int random =((int)Math.random()* 1000);
+			heap[i] = random;
+			sortUp();
+			
 		}
 		
-		PriorityQueue<Integer> heap = new PriorityQueue<Integer>();
-		heap.add(randoms);
 	}
+	public static void sortUp()
+	{
+		while(hasParent(index)&& )
+	}
+	
+	public static boolean hasParent(int index)
+	{
+		return index > 1;
+	}
+	
+	public static int leftIndex(int index)
+	{
+		return index *2;
+	}
+	
+	
+	
 }
