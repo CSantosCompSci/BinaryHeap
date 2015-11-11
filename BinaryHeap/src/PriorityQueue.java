@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class PriorityQueue<E> {
-	static ArrayList<Integer> heap;
+	ArrayList<Integer> heap;
 	int heapSize;
 
 	public PriorityQueue() {
@@ -14,6 +14,10 @@ public class PriorityQueue<E> {
 	public void add(int num) {
 		heap.add(num);
 
+	}
+	public int get(int index)
+	{
+		return heap.get(index);
 	}
 
 	public void remove(int index) {
@@ -30,14 +34,15 @@ public class PriorityQueue<E> {
 	}
 
 	public void sortUp(int index) {
+		
 		int parent = heap.get((index - 1) / 2);
 		int child = heap.get(index);
 		int temp = 0;
 		if (parent < child) {
 			temp = parent;
-			heap.set(parent, child);
-			heap.set(child, temp);
-			sortUp(parent);
+			heap.set((index - 1) / 2, child);
+			heap.set(index, temp);
+			sortUp((index - 1) / 2);
 		}
 
 	}
@@ -64,22 +69,20 @@ public class PriorityQueue<E> {
 
 	public void print(int index, int level)
 	{
+		if(index >= heap.size())
+			return;
 		int leftChild = (index * 2 + 1);
 		int rightChild =(index * 2 + 2);
-		if(rightChild < heap.size() )
-		{			
-			print(rightChild, level + 1);
-		}
-		for(int i = 1; i <= index; i++)
+		print(rightChild, level + 1);
+		
+		for(int i = 1; i <= level; i++)
 		{
 			System.out.print("    ");
 			
 		}
 		System.out.println(heap.get(index));
-		if(leftChild < heap.size())
-		{
-			print(leftChild, level + 1);
-		}
+		print(leftChild, level + 1);
+		
 	}
 
 }
