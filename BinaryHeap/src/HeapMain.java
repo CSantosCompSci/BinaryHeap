@@ -19,9 +19,9 @@ public class HeapMain
 		heap.print(0,0);
 		for( int index = 19; index >= 0; index-- )
 		{
+			heap.swapFirstAndLast(index);
+			heap.sortDown(0);
 			heap.remove(index);
-			//heap.swapFirsAndLast();
-			//heap.sortDown();
 			heap.print(0,0);
 			System.out.println();
 			
