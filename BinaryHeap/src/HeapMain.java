@@ -13,9 +13,19 @@ public class HeapMain
 			int random =((int)Math.random()* 1000);
 			heap.add(random);
 			heap.sortUp(index);
+			//heap.print(0, 0);
 			
 		}
-		for( int index; )
+		heap.print(index, level);
+		for( int index = 20; index > 0; index-- )
+		{
+			heap.remove(index);
+			//heap.swapFirsAndLast();
+			//heap.sortDown();
+			heap.print(0,0);
+			
+		}
 		
 	}
+}
 	
